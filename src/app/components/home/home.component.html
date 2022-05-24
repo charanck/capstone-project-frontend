@@ -1,0 +1,30 @@
+<app-nav></app-nav>
+<div class="flex flex-col  items-center h-screen">
+    <div>
+        <div *ngFor="let user of users">
+            <button routerLink="/chat/{{user.id}}">
+                <div class="relative flex items-center w-100 p-3 border-b border-gray-300">
+                    <img *ngIf="user.gender == 'male'" routerLink="/profile/{{user.id}}"
+                        class="object-cover w-10 h-10 rounded-full"
+                        src="https://media.istockphoto.com/photos/businessman-smiling-with-arms-crossed-on-white-background-picture-id1364917563?b=1&k=20&m=1364917563&s=170667a&w=0&h=8CrUeKtC9df9I5c0E_H86tc1vkB5FBt5gEr2nVqttP4="
+                        alt="username" />
+                    <img *ngIf="user.gender == 'female'" routerLink="/profile/{{user.id}}"
+                        class="object-cover w-10 h-10 rounded-full"
+                        src="https://media.istockphoto.com/photos/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter-picture-id1311084168?b=1&k=20&m=1311084168&s=170667a&w=0&h=mE8BgXPgcHO1UjSmdWYa21NIKDzJvMrjOffy39Ritpo="
+                        alt="username" />
+                    <span class="block ml-2 font-bold text-gray-600">{{user.username}}</span>
+                    <span *ngIf="user.isActive" class="absolute w-3 h-3 bg-green-600 rounded-full left-10 top-3">
+                    </span>
+                    <span *ngIf="!user.isActive" class="absolute w-3 h-3 bg-gray-600 rounded-full left-10 top-3">
+                    </span>
+                    <span *ngIf="!user.isActive">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        LASTSEEN -
+                        {{user.lastSeen.toLocaleDateString() +" "+ user.lastSeen.toLocaleTimeString().slice(0,5)}}
+                    </span>
+                </div>
+            </button>
+
+        </div>
+    </div>
+</div>

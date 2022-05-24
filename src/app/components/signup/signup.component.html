@@ -1,0 +1,73 @@
+<div class="bg-grey-lighter min-h-screen flex flex-col">
+    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+        <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+            <!-- username, email, gender, password, DOB, role -->
+            <h1 class="mb-8 text-3xl text-center">Sign up</h1>
+            <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="username"
+                placeholder="User Name" [(ngModel)]="username" />
+            <input [(ngModel)]="email" type="text" class="block border border-grey-light w-full p-3 rounded mb-4"
+                name="email" placeholder="Email" />
+
+            <div class="flex flex-wrap  mb-5">
+                <div class="w-full md:w-/3 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs  mb-1" for="gender">
+                        Gender
+                    </label>
+                    <div class="relative mb-4">
+                        <select
+                            class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            id="gender" [(ngModel)]="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap  mb-5">
+                    <div class="w-full md:w-/3 px-3 mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs  mb-1" for="role">
+                            Role
+                        </label>
+                        <div class="relative mb-4">
+                            <select
+                                class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                id="role" [(ngModel)]="role">
+                                <option value="admin">Admin</option>
+                                <option value="user" selected>User</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4"
+                        name="password" placeholder="Password" [(ngModel)]="password" />
+                    <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4"
+                        name="confirm_password" placeholder="Confirm Password" [(ngModel)]="confirmPassword" />
+
+                    <button type="submit"
+                        class="w-full text-center py-3 rounded bg-green text-black hover:bg-green-dark focus:outline-none my-1"
+                        (click)="signup()">Create
+                        Account</button>
+                </div>
+
+                <div class="text-grey-dark ">
+                    Already have an account?
+                    <button class="no-underline border-b border-blue text-blue" routerLink="/login">
+                        Log in
+                    </button>.
+                </div>
+            </div>
+        </div>

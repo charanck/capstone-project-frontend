@@ -1,0 +1,96 @@
+<app-nav></app-nav>
+<h1 class="text-center text-6xl font-normal leading-normal mt-0 mb-2 text-black-800">Feedback</h1>
+<div class="w-full md:w-96 md:max-w-full mx-auto">
+    <div class="p-6 border border-gray-300 sm:rounded-md">
+        <form method="POST" action="https://herotofu.com/start">
+            <label class="block mb-6">
+                <span class="text-gray-700">Please rate the app:</span>
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                        <select (change)="updateRateTheApplication()" 
+                        id="rating"
+                        class="form-select appearance-none
+                        block
+                        w-full
+                        px-3
+                        py-1.5
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding bg-no-repeat
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            aria-label="Default select example">
+                            <option value=""></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            </label>
+            <label *ngIf="rateTheApplication != null" class="block mb-6">
+                <span class="text-gray-700">Do you like the application?</span>
+                <div class="flex justify-center">
+                    <div class="mb-3 xl:w-96">
+                      <select (change)="updateDoYouLikeTheApplication()"id="doYouLikeTheApplication" class="form-select appearance-none
+                        block
+                        w-full
+                        px-3
+                        py-1.5
+                        text-base
+                        font-normal
+                        text-gray-700
+                        bg-white bg-clip-padding bg-no-repeat
+                        border border-solid border-gray-300
+                        rounded
+                        transition
+                        ease-in-out
+                        m-0
+                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
+                          <option selected></option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                      </select>
+                    </div>
+                  </div>
+            </label>
+            <label *ngIf="doYouLikeTheApplication != null" class="block mb-6">
+                <span class="text-gray-700">Any suggestion for improvement?</span>
+                <textarea name="message" id="anySuggestionForImprovement" (change)="updateAnySuggestionForImprovement()" class="
+              block
+              w-full
+              mt-1
+              border-gray-300
+              rounded-md
+              shadow-sm
+              focus:border-indigo-300
+              focus:ring
+              focus:ring-indigo-200
+              focus:ring-opacity-50
+            " rows="3" placeholder="Tell us here..."></textarea>
+            </label>
+            <div *ngIf="anySuggestionForImprovement != null" class="mb-6">
+                <button type="submit" (click)="submit()" class="
+              h-10
+              px-5
+              text-indigo-100
+              bg-indigo-700
+              rounded-lg
+              transition-colors
+              duration-150
+              focus:shadow-outline
+              hover:bg-indigo-800
+            ">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

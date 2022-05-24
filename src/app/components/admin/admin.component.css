@@ -1,0 +1,13 @@
+table {
+  table-layout: fixed;
+  width: 100%;
+  word-break: break-all;
+  overflow-wrap: break-all;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td {
+  word-break: break-all;
+
+}
